@@ -20,6 +20,21 @@ function adicionarTarefa() {
 
     const item = document.createElement("li");
     item.textContent = texto;
+    
+    const botaoConcluido = document.createElement("button");
+    botaoConcluido.textContent = "  ";
+    botaoConcluido.className ="concluir";
+    botaoConcluido.addEventListener("click", function() {
+        if (botaoConcluido.classList.contains("concluido")) {
+            botaoConcluido.classList.remove("concluido");
+            botaoConcluido.classList.add("naoConcluido");
+            botaoConcluido.textContent = "";
+        } else {
+            botaoConcluido.classList.remove("naoConcluido");
+            botaoConcluido.classList.add("concluido");
+            botaoConcluido.textContent = "✓";
+        }
+    })
 
     const botaoRemover = document.createElement("button");
     botaoRemover.textContent = "X";
@@ -27,10 +42,11 @@ function adicionarTarefa() {
     botaoRemover.addEventListener("click", function() {
         item.remove();
     });
-
+    
+    item.appendChild(botaoConcluido);
     item.appendChild(botaoRemover);
     taskList.appendChild(item);
-
+    
     input.value = "";
     input.focus();
 }
