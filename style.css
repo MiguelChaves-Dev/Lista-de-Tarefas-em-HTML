@@ -12,7 +12,7 @@ body {
     border-radius: 12px;
     width: 100%;
     max-width: 420px;
-    box-shadow: 0 8px 20xp rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 h1 {
@@ -50,8 +50,14 @@ ul {
 li {
     display:flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 0;
     border-bottom: 1px solid #eee;
+}
+.esquerda {
+    display:flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .remover {
@@ -61,3 +67,26 @@ li {
     background: none;
 }
 
+.naoConcluido {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #2563eb;
+    border-radius:  6px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+}
+
+.concluido {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #2563eb;
+    border-radius:  6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2563eb;
+    color: white;
+    padding: 0;
+}
